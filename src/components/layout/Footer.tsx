@@ -172,6 +172,14 @@ const Footer = () => {
                   className="w-5 h-5 text-green-400 mr-3"
                   aria-hidden="true"
                 />
+                <motion.a
+                  href="https://jaylineservice.co.ke"
+                  className="text-green-100 dark:text-gray-300 hover:text-white transition-colors text-sm"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  jaylineservice.co.ke
+                </motion.a>
+              </motion.div>
             </address>
           </motion.div>
         </div>
