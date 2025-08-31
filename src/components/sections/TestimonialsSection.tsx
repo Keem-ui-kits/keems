@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import { fadeInUp, scaleIn, staggerContainer } from '../../utils/animations';
