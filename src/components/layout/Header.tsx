@@ -3,13 +3,11 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 
-import { useScrollProgress } from '../../hooks/useScrollProgress';
 import ThemeToggle from '../ui/ThemeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const scrollProgress = useScrollProgress();
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -86,13 +84,6 @@ const Header = () => {
       {/* Main Header */}
       <motion.header
         className="bg-white dark:bg-gray-900 shadow-lg sticky top-0 z-40 transition-colors duration-300"
-        style={{
-          backgroundColor:
-            scrollProgress > 0.1
-              ? 'rgba(255, 255, 255, 0.95)'
-              : 'rgba(255, 255, 255, 1)',
-          backdropFilter: scrollProgress > 0.1 ? 'blur(10px)' : 'none',
-        }}
         initial="hidden"
         animate="visible"
         variants={headerVariants}
