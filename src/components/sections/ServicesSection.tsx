@@ -3,22 +3,16 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Users, Target, TrendingUp, ArrowRight } from 'lucide-react';
 
-import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import { fadeInUp, scaleIn, staggerContainer } from '../../utils/animations';
 
 const ServicesSection: React.FC = () => {
-  const { ref, isIntersecting } = useIntersectionObserver();
-
   return (
-    <section
-      ref={ref}
-      className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300"
-    >
+    <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           className="text-center mb-16"
           initial="hidden"
-          animate={isIntersecting ? 'visible' : 'hidden'}
+          animate="visible"
           variants={fadeInUp}
         >
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -33,7 +27,7 @@ const ServicesSection: React.FC = () => {
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={staggerContainer}
           initial="hidden"
-          animate={isIntersecting ? 'visible' : 'hidden'}
+          animate="visible"
         >
           {[
             {
@@ -109,7 +103,7 @@ const ServicesSection: React.FC = () => {
         <motion.div
           className="text-center mt-12"
           initial="hidden"
-          animate={isIntersecting ? 'visible' : 'hidden'}
+          animate="visible"
           variants={fadeInUp}
           transition={{ delay: 0.6 }}
         >

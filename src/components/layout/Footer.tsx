@@ -173,13 +173,11 @@ const Footer = () => {
                   aria-hidden="true"
                 />
                 <motion.a
-                  href="http://www.jaylineservice.co.ke"
+                  href="https://jaylineservice.co.ke"
                   className="text-green-100 dark:text-gray-300 hover:text-white transition-colors text-sm"
                   whileHover={{ scale: 1.05 }}
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
-                  www.jaylineservice.co.ke
+                  jaylineservice.co.ke
                 </motion.a>
               </motion.div>
             </address>

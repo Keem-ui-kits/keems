@@ -1,29 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-  Users,
-  Award,
-  Target,
-  Clock,
   CheckCircle,
-  TrendingUp,
-  Shield,
-  Globe,
 } from 'lucide-react';
 
 import SEO from '../lib/seo';
 import {
   AnimatedText,
-  AnimatedCounter,
   ParallaxSection,
   FloatingElements,
 } from '../components/ui';
+import { TestimonialsSection } from '../components/sections';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import {
   fadeInUp,
   fadeInLeft,
   fadeInRight,
-  scaleIn,
   staggerContainer,
 } from '../utils/animations';
 
@@ -31,12 +23,6 @@ const About = () => {
   const { ref: heroRef, isIntersecting: heroInView } =
     useIntersectionObserver();
   const { ref: storyRef, isIntersecting: storyInView } =
-    useIntersectionObserver();
-  const { ref: strengthsRef, isIntersecting: strengthsInView } =
-    useIntersectionObserver();
-  const { ref: leadershipRef, isIntersecting: leadershipInView } =
-    useIntersectionObserver();
-  const { ref: achievementsRef, isIntersecting: achievementsInView } =
     useIntersectionObserver();
 
   return (
@@ -243,24 +229,8 @@ const About = () => {
           </section>
         </ParallaxSection>
 
-        {/* Key Strengths */}
-        <section ref={strengthsRef} className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
-          <div className="max-w-7xl mx-auto px-4">
-            <motion.div
-              initial="hidden"
-              animate={strengthsInView ? 'visible' : 'hidden'}
-              variants={staggerContainer}
-              className="text-center"
-            >
-              <motion.h2
-                className="text-4xl font-bold text-gray-900 dark:text-white mb-16"
-                variants={fadeInUp}
-              >
-                Why Choose Jay Line Services
-              </motion.h2>
-            </motion.div>
-          </div>
-        </section>
+        {/* Client Testimonials */}
+        <TestimonialsSection />
       </div>
     </>
   );

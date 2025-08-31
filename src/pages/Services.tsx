@@ -30,13 +30,6 @@ import {
 const Services = () => {
   const { ref: heroRef, isIntersecting: heroInView } =
     useIntersectionObserver();
-  const { ref: overviewRef, isIntersecting: overviewInView } =
-    useIntersectionObserver();
-  const { ref: whyChooseRef, isIntersecting: whyChooseInView } =
-    useIntersectionObserver();
-  const { ref: processRef, isIntersecting: processInView } =
-    useIntersectionObserver();
-  const { ref: ctaRef, isIntersecting: ctaInView } = useIntersectionObserver();
 
   const serviceCategories = [
     {
@@ -300,12 +293,12 @@ const Services = () => {
       </section>
 
       {/* Services Overview */}
-      <section ref={overviewRef} className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             className="text-center mb-16"
             initial="hidden"
-            animate={overviewInView ? 'visible' : 'hidden'}
+            animate="visible"
             variants={fadeInUp}
           >
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -324,7 +317,7 @@ const Services = () => {
               key={index}
               className="mb-20"
               initial="hidden"
-              animate={overviewInView ? 'visible' : 'hidden'}
+              animate="visible"
               variants={staggerContainer}
               transition={{ delay: index * 0.2 }}
             >
@@ -364,7 +357,7 @@ const Services = () => {
                   className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6"
                   variants={staggerContainer}
                   initial="hidden"
-                  animate={overviewInView ? 'visible' : 'hidden'}
+                  animate="visible"
                 >
                   {category.benefits.map((benefit, benefitIndex) => (
                     <motion.div
@@ -384,7 +377,7 @@ const Services = () => {
                 className="grid md:grid-cols-2 gap-6"
                 variants={staggerContainer}
                 initial="hidden"
-                animate={overviewInView ? 'visible' : 'hidden'}
+                animate="visible"
               >
                 {category.services.map((service, serviceIndex) => (
                   <motion.div
@@ -438,12 +431,12 @@ const Services = () => {
 
       {/* Why Choose Our Services */}
       <ParallaxSection speed={-0.1}>
-        <section ref={whyChooseRef} className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+        <section className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
           <div className="max-w-7xl mx-auto px-4">
             <motion.div
               className="text-center mb-16"
               initial="hidden"
-              animate={whyChooseInView ? 'visible' : 'hidden'}
+              animate="visible"
               variants={fadeInUp}
             >
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -459,7 +452,7 @@ const Services = () => {
               className="grid md:grid-cols-3 gap-8"
               variants={staggerContainer}
               initial="hidden"
-              animate={whyChooseInView ? 'visible' : 'hidden'}
+              animate="visible"
             >
               {[
                 {
@@ -506,12 +499,12 @@ const Services = () => {
       </ParallaxSection>
 
       {/* Service Process */}
-      <section ref={processRef} className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             className="text-center mb-16"
             initial="hidden"
-            animate={processInView ? 'visible' : 'hidden'}
+            animate="visible"
             variants={fadeInUp}
           >
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -526,7 +519,7 @@ const Services = () => {
             className="grid md:grid-cols-4 gap-8"
             variants={staggerContainer}
             initial="hidden"
-            animate={processInView ? 'visible' : 'hidden'}
+            animate="visible"
           >
             {[
               {
@@ -579,14 +572,13 @@ const Services = () => {
 
       {/* CTA Section */}
       <section
-        ref={ctaRef}
         className="relative py-20 bg-green-600 dark:bg-green-700 text-white overflow-hidden transition-colors duration-300"
       >
         <FloatingElements />
         <div className="max-w-7xl mx-auto px-4 text-center relative">
           <motion.div
             initial="hidden"
-            animate={ctaInView ? 'visible' : 'hidden'}
+            animate="visible"
             variants={staggerContainer}
           >
             <motion.h2 className="text-4xl font-bold mb-6" variants={fadeInUp}>
