@@ -27,10 +27,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Facebook, href: 'https://facebook.com/jaylineservices', label: 'Facebook' },
+    { icon: Twitter, href: 'https://twitter.com/jaylineservices', label: 'Twitter' },
+    { icon: Linkedin, href: 'https://linkedin.com/company/jaylineservices', label: 'LinkedIn' },
+    { icon: Instagram, href: 'https://instagram.com/jaylineservices', label: 'Instagram' },
   ];
 
   return (
@@ -77,11 +77,13 @@ const Footer = () => {
                 <motion.a
                   key={index}
                   href={href}
-                  className="text-green-300 dark:text-gray-400 hover:text-white dark:hover:text-white transition-colors"
+                  className="text-green-300 dark:text-gray-400 hover:text-white dark:hover:text-white transition-colors focus-visible-ring"
                   whileHover={{ scale: 1.2, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                   aria-label={`Follow us on ${label}`}
                   role="listitem"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Icon className="w-5 h-5" aria-hidden="true" />
                 </motion.a>

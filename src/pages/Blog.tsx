@@ -139,10 +139,9 @@ const Blog = () => {
               variants={staggerContainer}
             >
               <motion.div variants={fadeInUp}>
-                <AnimatedText
-                  text="Blog & Insights"
-                  className="text-5xl font-bold mb-6"
-                />
+                <h1 className="text-5xl font-bold mb-6">
+                  <AnimatedText text="Blog & Insights" />
+                </h1>
               </motion.div>
               <motion.p
                 className="text-xl text-green-100 dark:text-green-200 max-w-3xl mx-auto"
@@ -173,7 +172,8 @@ const Blog = () => {
                   placeholder="Search articles..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus-visible-ring bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors"
+                  aria-label="Search blog articles"
                 />
               </motion.div>
 
@@ -183,7 +183,7 @@ const Blog = () => {
                   <motion.button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                    className={`px-4 py-2 rounded-lg font-medium transition-colors focus-visible-ring ${
                       selectedCategory === category
                         ? 'bg-green-600 text-white'
                         : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
@@ -261,7 +261,7 @@ const Blog = () => {
                         >
                           <Link
                             to={`/blog/${featuredPost.slug}`}
-                            className="bg-green-600 dark:bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 dark:hover:bg-green-600 transition-colors inline-flex items-center"
+                            className="bg-green-600 dark:bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 dark:hover:bg-green-600 transition-colors inline-flex items-center focus-visible-ring"
                           >
                             Read Article
                             <ArrowRight className="w-5 h-5 ml-2" />
@@ -395,7 +395,7 @@ const Blog = () => {
                         <motion.div whileHover={{ x: 5 }}>
                           <Link
                             to={`/blog/${post.slug}`}
-                            className="text-green-600 dark:text-green-400 font-semibold hover:text-green-700 dark:hover:text-green-300 flex items-center text-sm"
+                            className="text-green-600 dark:text-green-400 font-semibold hover:text-green-700 dark:hover:text-green-300 flex items-center text-sm focus-visible-ring"
                           >
                             Read More
                             <ArrowRight className="w-4 h-4 ml-1" />
@@ -418,7 +418,7 @@ const Blog = () => {
                 transition={{ delay: 0.6 }}
               >
                 <motion.button
-                  className="bg-green-600 dark:bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 dark:hover:bg-green-600 transition-colors inline-flex items-center"
+                  className="bg-green-600 dark:bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 dark:hover:bg-green-600 transition-colors inline-flex items-center focus-visible-ring"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => {
@@ -461,10 +461,11 @@ const Blog = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:ring-2 focus:ring-green-300 focus:outline-none"
+                  className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus-visible-ring"
+                  aria-label="Email address for newsletter"
                 />
                 <motion.button
-                  className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
+                  className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors focus-visible-ring"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

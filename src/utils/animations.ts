@@ -1,13 +1,19 @@
 // Animation utilities and configurations
 import { getReducedMotionPreference } from './performance';
 
+// Check for reduced motion preference
+const shouldReduceMotion = () => {
+  if (typeof window === 'undefined') return false;
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+};
+
 // Optimize animations based on user preferences
 const getOptimizedDuration = (duration: number): number => {
-  return getReducedMotionPreference() ? 0 : Math.min(duration, 0.3);
+  return shouldReduceMotion() ? 0 : Math.min(duration, 0.3);
 };
 
 const getOptimizedTransition = (transition: any) => {
-  if (getReducedMotionPreference()) {
+  if (shouldReduceMotion()) {
     return { duration: 0 };
   }
   return { ...transition, duration: Math.min(transition.duration || 0.3, 0.3) };
@@ -71,8 +77,8 @@ export const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: getReducedMotionPreference() ? 0 : 0.02,
-      delayChildren: getReducedMotionPreference() ? 0 : 0.02,
+      staggerChildren: shouldReduceMotion() ? 0 : 0.02,
+      delayChildren: shouldReduceMotion() ? 0 : 0.02,
     },
   },
 };

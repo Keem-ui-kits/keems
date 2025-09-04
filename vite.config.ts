@@ -25,6 +25,7 @@ export default defineConfig({
       '@/components': resolve(__dirname, './src/components'),
       '@/ui': resolve(__dirname, './src/components/ui'),
       '@/layout': resolve(__dirname, './src/components/layout'),
+      '@/layouts': resolve(__dirname, './src/layouts'),
       '@/sections': resolve(__dirname, './src/components/sections'),
       '@/forms': resolve(__dirname, './src/components/forms'),
       '@/hooks': resolve(__dirname, './src/hooks'),

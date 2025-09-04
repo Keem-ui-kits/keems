@@ -1,10 +1,8 @@
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ErrorBoundary } from 'react-error-boundary';
 
-import { Header, Footer } from './components/layout';
-import { ScrollProgress } from './components/ui';
+import MainLayout from './layouts/MainLayout';
 import { useScrollToTop } from './hooks/useScrollToTop';
 
 // Preload critical pages and lazy load others
@@ -39,51 +37,24 @@ const PageLoader = () => (
   </div>
 );
 
-// Error fallback component
-const ErrorFallback = ({ error, resetErrorBoundary }: any) => (
-  <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900">
-    <div className="text-center p-8">
-      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-        Something went wrong
-      </h2>
-      <p className="text-gray-600 dark:text-gray-300 mb-6">
-        {error.message}
-      </p>
-      <button
-        onClick={resetErrorBoundary}
-        className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
-      >
-        Try again
-      </button>
-    </div>
-  </div>
-);
-
 function App() {
   const location = useLocation();
 
   useScrollToTop();
 
   return (
-    <ErrorBoundary FallbackComponent={ErrorFallback}>
-      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
-        <ScrollProgress />
-        <Header />
-        <main>
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<BlogPost />} />
-            </Routes>
-          </Suspense>
-        </main>
-        <Footer />
-      </div>
-    </ErrorBoundary>
+    <MainLayout>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+        </Routes>
+      </Suspense>
+    </MainLayout>
   );
 }
 

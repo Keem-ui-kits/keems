@@ -68,10 +68,9 @@ const Home = () => {
                 animate={heroInView ? 'visible' : 'hidden'}
                 variants={fadeInLeft}
               >
-                <AnimatedText
-                  text="Your Trusted HR Partner in Kenya"
-                  className="text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
-                />
+                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                  <AnimatedText text="Your Trusted HR Partner in Kenya" />
+                </h1>
                 <motion.p
                   className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed"
                   variants={fadeInUp}
@@ -258,7 +257,7 @@ const Home = () => {
                             }
                           }, 100);
                         }}
-                        className="text-green-600 dark:text-green-400 font-semibold hover:text-green-700 dark:hover:text-green-300 flex items-center"
+                        className="text-green-600 dark:text-green-400 font-semibold hover:text-green-700 dark:hover:text-green-300 flex items-center focus-visible-ring"
                       >
                         Learn More <ArrowRight className="w-4 h-4 ml-1" />
                       </Link>
@@ -280,7 +279,7 @@ const Home = () => {
                 >
                   <Link
                     to="/services"
-                    className="bg-green-600 dark:bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 dark:hover:bg-green-600 transition-colors inline-flex items-center"
+                    className="bg-green-600 dark:bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 dark:hover:bg-green-600 transition-colors inline-flex items-center focus-visible-ring"
                   >
                     View All Services
                     <ArrowRight className="w-5 h-5 ml-2" />
@@ -381,7 +380,7 @@ const Home = () => {
                       >
                         <motion.div
                           className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-4 flex-shrink-0"
-                          whileHover={{ rotate: 5, scale: 1.1 }}
+                          className="block border-2 border-green-400 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-500 dark:hover:bg-green-600 transition-colors text-center focus-visible-ring"
                         >
                           <item.icon className="w-6 h-6 text-green-600 dark:text-green-400" />
                         </motion.div>

@@ -280,10 +280,9 @@ const Services = () => {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp}>
-              <AnimatedText
-                text="Our Services"
-                className="text-5xl font-bold mb-6"
-              />
+              <h1 className="text-5xl font-bold mb-6">
+                <AnimatedText text="Our Services" />
+              </h1>
             </motion.div>
             <motion.p
               className="text-xl text-green-100 max-w-3xl mx-auto"

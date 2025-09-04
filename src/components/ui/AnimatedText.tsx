@@ -50,7 +50,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
   const child = {
     hidden: {
       opacity: 0,
-      y: 10,
+      y: getReducedMotionPreference() ? 0 : 10,
     },
     visible: {
       opacity: 1,
