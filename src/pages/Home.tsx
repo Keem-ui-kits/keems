@@ -249,7 +249,15 @@ const Home = () => {
                     <motion.div whileHover={{ x: 5 }}>
                       <Link
                         to="/services"
-                        state={{ scrollTo: index === 0 ? 'hr-solutions' : index === 1 ? 'manpower-employment-services' : 'financial-advisory-services' }}
+                        onClick={() => {
+                          const sectionId = index === 0 ? 'hr-solutions' : index === 1 ? 'manpower-employment-services' : 'financial-advisory-services';
+                          setTimeout(() => {
+                            const element = document.getElementById(sectionId);
+                            if (element) {
+                              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                          }, 100);
+                        }}
                         className="text-green-600 dark:text-green-400 font-semibold hover:text-green-700 dark:hover:text-green-300 flex items-center"
                       >
                         Learn More <ArrowRight className="w-4 h-4 ml-1" />

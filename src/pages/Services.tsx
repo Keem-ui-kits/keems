@@ -32,18 +32,6 @@ const Services = () => {
   const { ref: heroRef, isIntersecting: heroInView } =
     useIntersectionObserver();
 
-  // Handle scrolling to specific service section
-  React.useEffect(() => {
-    if (location.state?.scrollTo) {
-      const element = document.getElementById(location.state.scrollTo);
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100);
-      }
-    }
-  }, [location.state]);
-
   const serviceCategories = [
     {
       id: 'hr-solutions',

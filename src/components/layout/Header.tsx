@@ -42,52 +42,12 @@ const Header = () => {
   ];
 
   return (
-    <>
-      {/* Top Bar */}
-      <motion.div
-        className="bg-green-800 dark:bg-green-900 text-white py-2 text-sm"
-        initial="hidden"
-        animate="visible"
-        variants={headerVariants}
-      >
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center space-x-6">
-            <div className="flex items-center">
-              <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
-              <a
-                href="tel:+254722311490"
-                className="hover:text-green-200 transition-colors"
-                aria-label="Call us at +254 722 311 490"
-              >
-                +254 722 311 490 / +254 734 271 863
-              </a>
-            </div>
-            <div className="flex items-center">
-              <Mail className="w-4 h-4 mr-2" aria-hidden="true" />
-              <a
-                href="mailto:info@jaylineservice.co.ke"
-                className="hover:text-green-200 transition-colors"
-                aria-label="Email us at info@jaylineservice.co.ke"
-              >
-                info@jaylineservice.co.ke
-              </a>
-            </div>
-          </div>
-          <div className="hidden md:flex items-center space-x-4">
-            <span>
-              Beliani Annex, Ground Floor, Along Kangundo Road, Nairobi
-            </span>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Main Header */}
-      <motion.header
-        className="bg-white dark:bg-gray-900 shadow-lg sticky top-0 z-40 transition-colors duration-300"
-        initial="hidden"
-        animate="visible"
-        variants={headerVariants}
-      >
+    <motion.header
+      className="bg-white dark:bg-gray-900 shadow-lg sticky top-0 z-40 transition-colors duration-300"
+      initial="hidden"
+      animate="visible"
+      variants={headerVariants}
+    >
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
@@ -234,7 +194,6 @@ const Header = () => {
           </AnimatePresence>
         </div>
       </motion.header>
-    </>
   );
 };
 
