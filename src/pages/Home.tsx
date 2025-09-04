@@ -84,14 +84,14 @@ const Home = () => {
                   variants={fadeInUp}
                   transition={{ delay: 0.4 }}
                 >
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
+                  <div className="flex flex-col gap-4 w-full">
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
                       <Link
                         to="/services"
-                        className="bg-green-600 dark:bg-green-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 dark:hover:bg-green-600 transition-colors flex items-center justify-center min-w-[220px]"
+                        className="bg-green-600 dark:bg-green-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 dark:hover:bg-green-600 transition-colors flex items-center justify-center w-full"
                       >
                         Explore Our Services
                         <ArrowRight className="w-5 h-5 ml-2" />
@@ -103,7 +103,7 @@ const Home = () => {
                     >
                       <Link
                         to="/contact"
-                        className="border-2 border-green-600 dark:border-green-500 text-green-600 dark:text-green-400 px-8 py-4 rounded-lg font-semibold hover:bg-green-50 dark:hover:bg-green-900/20 transition-colors text-center min-w-[220px]"
+                        className="border-2 border-green-600 dark:border-green-500 text-green-600 dark:text-green-400 px-8 py-4 rounded-lg font-semibold hover:bg-green-50 dark:hover:bg-green-900/20 transition-colors flex items-center justify-center w-full"
                       >
                         Get Free Consultation
                       </Link>
@@ -249,6 +249,7 @@ const Home = () => {
                     <motion.div whileHover={{ x: 5 }}>
                       <Link
                         to="/services"
+                        state={{ scrollTo: index === 0 ? 'hr-solutions' : index === 1 ? 'manpower-employment-services' : 'financial-advisory-services' }}
                         className="text-green-600 dark:text-green-400 font-semibold hover:text-green-700 dark:hover:text-green-300 flex items-center"
                       >
                         Learn More <ArrowRight className="w-4 h-4 ml-1" />

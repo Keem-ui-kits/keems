@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   Users,
@@ -28,11 +28,25 @@ import {
 } from '../utils/animations';
 
 const Services = () => {
+  const location = useLocation();
   const { ref: heroRef, isIntersecting: heroInView } =
     useIntersectionObserver();
 
+  // Handle scrolling to specific service section
+  React.useEffect(() => {
+    if (location.state?.scrollTo) {
+      const element = document.getElementById(location.state.scrollTo);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [location.state]);
+
   const serviceCategories = [
     {
+      id: 'hr-solutions',
       title: 'Human Resource Solutions',
       icon: Users,
       description:
@@ -99,6 +113,7 @@ const Services = () => {
       ],
     },
     {
+      id: 'manpower-employment-services',
       title: 'Manpower & Employment Services',
       icon: Target,
       description:
@@ -152,6 +167,7 @@ const Services = () => {
       ],
     },
     {
+      id: 'financial-advisory-services',
       title: 'Financial & Advisory Services',
       icon: TrendingUp,
       description:
@@ -205,6 +221,7 @@ const Services = () => {
       ],
     },
     {
+      id: 'training-development',
       title: 'Training & Development',
       icon: GraduationCap,
       description:
@@ -315,6 +332,7 @@ const Services = () => {
           {serviceCategories.map((category, index) => (
             <motion.div
               key={index}
+              id={category.id}
               className="mb-20"
               initial="hidden"
               animate="visible"
